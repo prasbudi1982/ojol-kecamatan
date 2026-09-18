@@ -23,7 +23,7 @@ export default function Home() {
 
   const login = () => supabase.auth.signInWithOAuth({
     provider: 'google',
-    options: { redirectTo: window.location.origin }
+    options: { redirectTo: `${window.location.origin}/auth/callback` }
   })
   const logout = () => supabase.auth.signOut().then(()=>setUser(null))
 
